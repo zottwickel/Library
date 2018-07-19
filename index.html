@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Library</title>
+	</head>
+	<body>
+		<h1>Library</h1>
+
+		<span>Title: </span><input type="text" id="title" required><br>
+		<span>Author: </span><input type="text" id="author" required><br>
+		<span>Pages: </span><input type="number" id="pages" min=1 max=5000 required><br>
+		<label for="read">Read?</label><input type="checkbox" id="read"><br>
+		<button id="save" onClick="addBookToLibrary()">Add Book</button>
+
+		<div id="list"></div>
+
+		<script>
+
+			let myLibrary = []
+
+			function Book(title, author, pages, read) {
+				this.title = title;
+				this.author = author;
+				this.pages = pages;
+				this.read = read;
+				this.info = function() {
+					return "Title: " + title + ", Author: " + author + ", Pages: " + pages + ", Read: " + read + "\n"
+				}
+			}
+
+			function addBookToLibrary() {
+
+				let title = document.getElementById("title").value;
+				let author = document.getElementById("author").value;
+				let pages = document.getElementById("pages").value;
+				let read = document.getElementById("read").checked;
+
+				if (title != "" && author != "" && pages > 0) {
+					myLibrary.push(new Book(title, author, pages, read));
+				}
+				render();
+			}
+
+			myLibrary.push(new Book("Jonathan Livingston Seagull", "Richard Bach", 127, true));
+
+			function render() {
+				var list = document.getElementById("list")
+				while (list.firstChild) {
+					list.removeChild(list.firstChild);
+				}
+				for (i = 0; i < myLibrary.length; i++) {
+					var list = document.getElementById("list")
+					var p = document.createElement("p");
+					p.className = "entry"
+					var content = document.createTextNode(myLibrary[i].info());
+					p.appendChild(content);
+					list.appendChild(p);
+				}
+			}
+
+			render();
+
+		</script>
+	</body>
+</html>
