@@ -2,15 +2,90 @@
 <html>
 	<head>
 		<title>Library</title>
+		<style>
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: lightblue;
+			font-family: Ariel, Helvetica, sans-serif;
+		}
+
+		header {
+			background-color: blue;
+			overflow: hidden;
+			padding: 24px;
+			margin-bottom: 18px;
+			color: white;
+		}
+
+		#save {
+			background-color: orange;
+			margin: 5px;
+			padding: 9px 18px;
+			border-radius: 8px;
+			border: none;
+			cursor: pointer;
+			outline: none;
+			font-size: 24px;
+		}
+
+		#save:hover {
+			box-shadow: 4px 8px 20px;
+		}
+
+		#save:active {
+			transform: translateY(3px);
+		}
+
+		#read {
+			height: 24px;
+			width: 24px;
+			background-color: #eee;
+			top: 0;
+			left: 0;
+			margin: 4px;
+		}
+
+		#read:hover {
+			cursor: pointer;
+		}
+
+		input {
+			border-radius: 4px;
+			border: none;
+			outline: none;
+		}
+
+		.form {
+			font-size: 24px;
+			margin: 3px;
+			padding: 9px;
+		}
+
+		p {
+			font-size: 24px;
+			margin: 24px;
+		}
+
+	  </style>
 	</head>
 	<body>
-		<h1>Library</h1>
 
-		<span>Title: </span><input type="text" id="title" required><br>
-		<span>Author: </span><input type="text" id="author" required><br>
-		<span>Pages: </span><input type="number" id="pages" min=1 max=5000 required><br>
-		<label for="read">Read?</label><input type="checkbox" id="read"><br>
-		<button id="save" onClick="addBookToLibrary()">Add Book</button>
+		<header>
+			<h1>Library</h1>
+		</header>
+
+		<div class="form-container">
+			<span class="form">Title: </span><input type="text" class="form" id="title" required><br>
+			<span class="form">Author: </span><input type="text" class="form" id="author" required><br>
+			<span class="form">Pages: </span><input type="number" class="form" id="pages" min=1 max=5000 required><br>
+			<label class="form" for="read">Read?</label><input class="form" type="checkbox" id="read"><br>
+			<button id="save" onClick="addBookToLibrary()">Add Book</button>
+		</div>
 
 		<div id="list"></div>
 
