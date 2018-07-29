@@ -1,0 +1,86 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Ariel, Helvetica, sans-serif;
+}
+
+.content {
+	background: linear-gradient( to bottom right, lightgrey, white);
+	margin-left: 5%;
+	margin-right: 5%;
+	padding: 24px;
+}
+
+header {
+	background-color: blue;
+	overflow: hidden;
+	padding: 24px;
+	margin-bottom: 0px;
+	color: white;
+}
+
+button {
+	background-color: blue;
+	margin: 20px 5px;
+	padding: 9px 18px;
+	border-radius: 8px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	font-size: 24px;
+	color: white;
+}
+
+button:hover {
+	box-shadow: 4px 8px 20px black;
+}
+
+button:active {
+	transform: translateY(3px);
+}
+
+#read {
+	height: 24px;
+	width: 24px;
+	background-color: #eee;
+	top: 0;
+	left: 0;
+	margin: 4px;
+}
+
+#read:hover {
+	cursor: pointer;
+}
+
+input {
+	border-radius: 4px;
+	border: none;
+	outline: none;
+}
+
+.form {
+	font-size: 24px;
+	margin: 3px;
+	padding: 9px;
+}
+
+#list {
+	border-style: solid;
+	border-collapse: collapse;
+	font-size: 24px;
+}
+
+th {
+	border-style: solid;
+	border-color: black;
+}
+
+td {
+	border-style: dashed;
+	border-color: grey;
+	padding-left: 18px;
+	padding-right: 18px;
+}
